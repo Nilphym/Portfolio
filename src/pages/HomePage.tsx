@@ -1,10 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../components';
 import { styled } from '@mui/material/styles';
 import { Box, Typography } from '@mui/material';
 
-import { Button } from '../components';
-import { headingText, description, buttonText } from '../assets/text/homePage';
+import {
+  headingText,
+  description,
+  projectLinkText
+} from '../assets/text/homePage';
+import { routes } from '../routes';
 
 const Container = styled(Box)({
   display: 'flex',
@@ -25,6 +29,9 @@ const HeadingLine = styled('span')(({ theme }) => ({
   fontWeight: 'bold',
   [theme.breakpoints.up('xs')]: {
     fontSize: '1.7rem'
+  },
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '2.2rem'
   }
 }));
 
@@ -34,18 +41,20 @@ const HeadingLinePrimary = styled(HeadingLine)(({ theme }) => ({
   marginBottom: '0.3rem',
   [theme.breakpoints.up('xs')]: {
     fontSize: '4rem'
+  },
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '5.5rem'
   }
 }));
 
 const Description = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     fontSize: '1.1rem'
+  },
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '1.2rem'
   }
 }));
-
-const StyledLink = styled(Link)({
-  textDecoration: 'none'
-});
 
 export const HomePage = () => {
   return (
@@ -56,9 +65,7 @@ export const HomePage = () => {
         <HeadingLine>{headingText[2]}</HeadingLine>
       </Heading>
       <Description align="justify">{description}</Description>
-      <StyledLink to="/help">
-        <Button>{buttonText}</Button>
-      </StyledLink>
+      <Link to={routes.projects}>{projectLinkText}</Link>
     </Container>
   );
 };

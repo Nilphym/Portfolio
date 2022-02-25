@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useResolvedPath, useMatch } from 'react-router-dom';
+import type { LinkProps } from 'react-router-dom';
 import { List, ListItem, ListItemText, Divider, styled } from '@mui/material';
 
 type NavLinksProps = {
@@ -7,10 +8,20 @@ type NavLinksProps = {
   closeNavbar: () => void;
 };
 
-const StyledLink = styled(Link)(({ theme }) => ({
-  textDecoration: 'none',
-  color: theme.palette.text.primary
-}));
+const StyledLink = styled(Link)({
+  textDecoration: 'none'
+});
+
+const CustomLink = ({ children, to }: LinkProps) => {
+  let resolved = useResolvedPath(to);
+  let match = useMatch({ path: resolved.pathname, end: true });
+
+  return (
+    <StyledLink to={to} sx={{ color: match ? 'primary.main' : 'text.primary' }}>
+      {children}
+    </StyledLink>
+  );
+};
 
 export const NavLinks = ({ navLinks, closeNavbar }: NavLinksProps) => {
   return (
@@ -18,11 +29,11 @@ export const NavLinks = ({ navLinks, closeNavbar }: NavLinksProps) => {
       <Divider />
       {navLinks.map(({ name, url }) => (
         <Fragment key={name}>
-          <StyledLink to={url}>
+          <CustomLink to={url}>
             <ListItem sx={{ textAlign: 'center' }} button>
               <ListItemText primary={name} />
             </ListItem>
-          </StyledLink>
+          </CustomLink>
           <Divider />
         </Fragment>
       ))}

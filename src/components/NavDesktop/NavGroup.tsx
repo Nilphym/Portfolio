@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { List } from '@mui/material';
 
 import { NavIcon } from './NavIcon';
 import type { NavIconItem } from './NavIcon';
@@ -11,7 +11,7 @@ type NavGroupProps = {
 
 export const NavGroup = ({ unreelLeft = false, items }: NavGroupProps) => {
   return (
-    <Box
+    <List
       sx={{
         width: '5rem',
         position: 'absolute',
@@ -29,6 +29,6 @@ export const NavGroup = ({ unreelLeft = false, items }: NavGroupProps) => {
       {items.map((item) => (
         <NavIcon key={item.name} {...item} unreelLeft={unreelLeft} />
       ))}
-    </Box>
+    </List>
   );
 };

@@ -10,13 +10,15 @@ import {
 } from '../assets/text/homePage';
 import { routes } from '../routes';
 
-const Container = styled(Box)({
+const Container = styled(Box)(({ theme }) => ({
+  maxWidth: '40rem',
   display: 'flex',
   flexDirection: 'column',
   gap: '2.5rem',
   alignSelf: 'center',
+  justifySelf: 'center',
   alignItems: 'flex-start'
-});
+}));
 
 const Heading = styled(Typography)({
   display: 'flex',

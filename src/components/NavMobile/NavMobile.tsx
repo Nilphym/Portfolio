@@ -6,8 +6,9 @@ import { Hamburger } from './Hamburger';
 import { NavHeader } from './NavHeader';
 import { NavLinks } from './NavLinks';
 import { NavFooter } from './NavFooter';
-import { items } from '../../assets/text/navigation';
 import { routes } from '../../routes';
+import { items } from '../../assets/text/navigation';
+import { socials } from '../../assets/externalResources';
 
 const NavContainer = styled(Box)(({ theme }) => ({
   width: '100vw',
@@ -21,11 +22,11 @@ const NavContainer = styled(Box)(({ theme }) => ({
 const iconLinks = [
   {
     component: <GitHub />,
-    url: 'https://github.com/Nilphym'
+    url: socials.gitHub.url
   },
   {
     component: <LinkedIn />,
-    url: 'https://www.linkedin.com/in/jedrzej-ratajczak/'
+    url: socials.linkedIn.url
   }
 ];
 

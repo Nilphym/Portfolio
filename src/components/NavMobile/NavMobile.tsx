@@ -40,10 +40,6 @@ const navLinks = [
     url: routes.about
   },
   {
-    name: items.skills,
-    url: routes.skills
-  },
-  {
     name: items.projects,
     url: routes.projects
   },

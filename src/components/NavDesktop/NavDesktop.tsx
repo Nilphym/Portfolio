@@ -3,7 +3,6 @@ import {
   Home,
   Person,
   Architecture,
-  Work,
   Email,
   GitHub,
   LinkedIn
@@ -17,7 +16,6 @@ import { socials } from '../../assets/externalResources';
 const navItems = [
   { IconComponent: Home, name: items.home, to: routes.home },
   { IconComponent: Person, name: items.about, to: routes.about },
-  { IconComponent: Work, name: items.skills, to: routes.skills },
   { IconComponent: Architecture, name: items.projects, to: routes.projects },
   { IconComponent: Email, name: items.contact, to: routes.contact }
 ];

@@ -1,7 +1,6 @@
 export const items = {
   home: 'Home',
   about: 'About',
-  skills: 'Skills',
   projects: 'Projects',
   contact: 'Contact'
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, styled } from '@mui/material';
 
 type FeaturedSkillCardProps = {
   title: string;
@@ -8,6 +8,44 @@ type FeaturedSkillCardProps = {
   description: string;
 };
 
+const Container = styled(Box)(({ theme }) => ({
+  maxWidth: '35rem',
+  padding: '1rem',
+  margin: '0 auto',
+  backgroundColor: theme.palette.secondary.main
+}));
+
+const Title = styled(Typography)(({ theme }) => ({
+  fontSize: '1.5rem',
+  paddingBottom: '0.6rem',
+  fontWeight: 'bold',
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '1.7rem'
+  }
+}));
+
+const Subtitle = styled(Typography)(({ theme }) => ({
+  fontSize: '1.1rem',
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '1.3rem'
+  }
+}));
+
+const Date = styled(Typography)(({ theme }) => ({
+  fontSize: '0.8rem',
+  paddingBottom: '0.6rem',
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '1rem'
+  }
+}));
+
+const Description = styled(Typography)(({ theme }) => ({
+  fontSize: '0.8rem',
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '0.9rem'
+  }
+}));
+
 export const FeaturedSkillCard = ({
   title,
   subtitle,
@@ -15,27 +53,15 @@ export const FeaturedSkillCard = ({
   description
 }: FeaturedSkillCardProps) => {
   return (
-    <Box sx={{ padding: '1rem', backgroundColor: 'secondary.main' }}>
-      <Typography
-        variant="h3"
-        color="primary.main"
-        sx={{ fontSize: '1.5rem', paddingBottom: '0.6rem', fontWeight: 'bold' }}
-      >
+    <Container>
+      <Title variant="h3" color="primary.main">
         {title}
-      </Typography>
-      <Typography variant="h4" sx={{ fontSize: '1.1rem' }}>
-        {subtitle}
-      </Typography>
-      <Typography sx={{ fontSize: '0.8rem', paddingBottom: '0.6rem' }}>
-        {date}
-      </Typography>
-      <Typography
-        align="justify"
-        color="text.secondary"
-        sx={{ fontSize: '0.8rem' }}
-      >
+      </Title>
+      <Subtitle variant="h4">{subtitle}</Subtitle>
+      <Date>{date}</Date>
+      <Description align="justify" color="text.secondary">
         {description}
-      </Typography>
-    </Box>
+      </Description>
+    </Container>
   );
 };

@@ -14,16 +14,16 @@ export const NavGroup = ({ unreelLeft = false, items }: NavGroupProps) => {
     <List
       sx={{
         width: '5rem',
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
+        position: 'fixed',
+        top: '50%',
         left: unreelLeft ? 'initial' : '1rem',
         right: unreelLeft ? '1rem' : 'initial',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '2rem'
+        gap: '2rem',
+        transform: 'translateY(-50%)'
       }}
     >
       {items.map((item) => (

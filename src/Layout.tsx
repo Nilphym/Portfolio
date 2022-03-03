@@ -8,7 +8,7 @@ import { NavMobile, NavDesktop, NavDesktopSocials } from './components';
 const Container = styled(Box)(({ theme }) => ({
   position: 'relative',
   display: 'grid',
-  height: '100vh',
+  minHeight: '100vh',
   padding: '0 2rem',
   gridTemplateRows: 'min-content 2fr',
   [theme.breakpoints.up('md')]: {
@@ -21,7 +21,10 @@ const Header = styled(Box)({
   alignItems: 'center',
   justifyContent: 'end',
   width: '100%',
-  height: '5rem'
+  height: '5rem',
+  position: 'sticky',
+  top: 0,
+  zIndex: 1500
 });
 
 export const Layout = () => {

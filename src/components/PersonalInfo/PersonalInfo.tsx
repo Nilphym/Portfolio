@@ -11,7 +11,7 @@ const Paragraph = styled(Typography)(({ theme }) => ({
 }));
 
 const Label = styled(Typography)<{ component: string }>(({ theme }) => ({
-  fontSize: '1rem',
+  fontSize: '0.85rem',
   paddingRight: '0.5rem',
   [theme.breakpoints.up('sm')]: {
     fontSize: '1.2rem'
@@ -19,7 +19,7 @@ const Label = styled(Typography)<{ component: string }>(({ theme }) => ({
 }));
 
 const Content = styled(Typography)<{ component: string }>(({ theme }) => ({
-  fontSize: '1rem',
+  fontSize: '0.85rem',
   paddingRight: '0.5rem',
   [theme.breakpoints.up('sm')]: {
     fontSize: '1.2rem'

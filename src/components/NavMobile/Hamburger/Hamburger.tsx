@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '@mui/material/styles';
+import ReactDOM from 'react-dom';
 
 import './hamburgers.min.css';
 
@@ -9,13 +9,14 @@ type HamburgerProps = {
 };
 
 export const Hamburger = ({ open, setOpen }: HamburgerProps) => {
-  const theme = useTheme();
-
-  return (
+  return ReactDOM.createPortal(
     <button
       style={{
-        padding: '0.6rem 0.3rem 0.3rem',
-        backgroundColor: theme.palette.background.default
+        position: 'fixed',
+        top: '2rem',
+        right: '2rem',
+        zIndex: 1500,
+        transform: 'translateY(-50%)'
       }}
       className={`hamburger hamburger--spring ${open && 'is-active'}`}
       type="button"
@@ -24,6 +25,7 @@ export const Hamburger = ({ open, setOpen }: HamburgerProps) => {
       <span className="hamburger-box">
         <span className="hamburger-inner"></span>
       </span>
-    </button>
+    </button>,
+    document.body
   );
 };

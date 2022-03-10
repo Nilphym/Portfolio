@@ -7,3 +7,4 @@ export { FeaturedSkillCard } from './FeaturedSkillCard';
 export { Timeline } from './Timeline';
 export type { TimelineProps } from './Timeline';
 export { PersonalInfo } from './PersonalInfo';
+export { ContactLink } from './ContactLink';

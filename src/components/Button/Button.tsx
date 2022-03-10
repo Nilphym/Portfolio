@@ -4,7 +4,7 @@ import { CollisionButton } from './CollisionButton';
 
 type ButtonProps = {
   children: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
